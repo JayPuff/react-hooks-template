@@ -1,0 +1,13 @@
+{
+    "window.zoomLevel": 0,
+    "editor.accessibilitySupport": "off",
+    "editor.detectIndentation": false,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue"
+    ],
+    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true
+}

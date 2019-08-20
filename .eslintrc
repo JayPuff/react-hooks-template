@@ -1,0 +1,25 @@
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        }
+    },
+    "rules": {
+        "no-console": "off",
+        "no-unused-vars": "off"
+    },
+    "globals": {
+        "WEBPACK_DEV": true,
+        "VERSION": true,
+        "USE_SERVICE_WORKER": true
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "env": {
+        "browser": true,
+        "node": true
+    }
+}

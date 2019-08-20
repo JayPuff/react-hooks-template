@@ -1,0 +1,69 @@
+{
+  "name": "react-hooks",
+  "version": "1.0.0",
+  "description": "React Hooks Template",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack/webpack.config.js --host 0.0.0.0 --mode development --open",
+    "dev": "webpack-dev-server --config ./webpack/webpack.config.js --host 0.0.0.0 --mode development",
+    "build": "rimraf ./dist && webpack --config ./webpack/webpack.config.js --mode production",
+    "electron": "npm-run-all -p -r _dev-electron _electron-dev",
+    "electron-build": "npm run _build-electron-files && cd dist && npm install --production && electron .",
+    "installer": "npm run _build-electron-files && rimraf ./installer && electron-builder --publish always",
+    "clean": "rimraf ./installer && rimraf ./dist",
+    "_build-electron-files": "rimraf ./dist && set electronBuild=true && webpack --config ./webpack/webpack.config.js --mode production",
+    "_dev-electron": "set electronBuild=true && webpack-dev-server --config ./webpack/webpack.config.js --mode development",
+    "_electron-dev": "cd electron-app && electron . --devServer"
+  },
+  "build": {
+    "appId": "com.template.app",
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://c.i-gotcha.com/nick/updater-test"
+      }
+    ],
+    "win": {
+      "icon": "public/favicon-256.ico"
+    },
+    "directories": {
+      "app": "dist",
+      "output": "installer"
+    }
+  },
+  "author": "Nicolas Correa",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "axios": "^0.19.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "circular-dependency-plugin": "^5.2.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
+    "es6-object-assign": "^1.1.0",
+    "eslint": "^6.2.1",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "promise-polyfill": "^8.1.3",
+    "qs": "^6.8.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "resolve-url-loader": "^3.1.0",
+    "rimraf": "^3.0.0",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "whatwg-fetch": "^3.0.0",
+    "workbox-webpack-plugin": "^4.3.1"
+  }
+}
