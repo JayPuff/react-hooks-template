@@ -1,0 +1,1 @@
+export const currentID = store => store.currentID;

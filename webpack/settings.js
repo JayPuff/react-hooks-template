@@ -53,6 +53,7 @@ const config = {
     aliases: {
         Components: '../src/components',
         Hooks: '../src/hooks',
+        Store: '../src/store',
         Api: '../src/api',
         Assets: '../src/assets',
         Styles: '../src/styles',
